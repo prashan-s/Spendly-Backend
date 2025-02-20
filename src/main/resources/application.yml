@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "Spendly"
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/spendly
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO

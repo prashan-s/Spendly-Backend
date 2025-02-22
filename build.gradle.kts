@@ -3,6 +3,9 @@ plugins {
     kotlin("plugin.spring") version "1.9.25"
     id("org.springframework.boot") version "3.4.3"
     id("io.spring.dependency-management") version "1.1.7"
+
+    kotlin("kapt") version "1.9.25"
+
 }
 
 group = "com.spendly"
@@ -33,9 +36,6 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
-    // Scheduling
-    implementation("org.springframework.boot:spring-boot-starter-scheduling")
-
     // Swagger/OpenAPI documentation
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
 
@@ -43,6 +43,11 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    // ANNOTATION
+    compileOnly("org.projectlombok:lombok:1.18.28")
+    annotationProcessor("org.projectlombok:lombok:1.18.28")
+    implementation("org.modelmapper:modelmapper:3.2.0")
 
     // Development Tools
     developmentOnly("org.springframework.boot:spring-boot-devtools")

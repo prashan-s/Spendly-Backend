@@ -2,6 +2,7 @@ package com.spendly.backend.controller
 
 import com.spendly.backend.dto.LoginRequest
 import com.spendly.backend.dto.LoginResponse
+import com.spendly.backend.dto.RegisterRequest
 import com.spendly.backend.entity.User
 import com.spendly.backend.service.IUserService
 import com.spendly.backend.util.JwtUtil
@@ -10,12 +11,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 class AuthController(
     private val userService: IUserService,
     private val jwtUtil: JwtUtil
 ) {
     private val passwordEncoder = BCryptPasswordEncoder()
+
+    @PostMapping("/register")
+    fun register(@RequestBody request: RegisterRequest): ResponseEntity<Any> {
+        return try {
+            val user: User = userService.registerUser(request)
+            ResponseEntity.ok("User registered successfully")
+        } catch (e: IllegalArgumentException) {
+            ResponseEntity.badRequest().body(e.message)
+        }
+    }
 
     @PostMapping("/login")
     fun login(@RequestBody request: LoginRequest): ResponseEntity<Any> {

@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /api/v1/spendly/
+    context-path: /api/v1/
   error:
     include-exception: true
     include-message: always

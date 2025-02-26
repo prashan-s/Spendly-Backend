@@ -11,7 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails
 data class User(
     @Id
     val id: String? = null,
+    @get:JvmName("getUsernameForUser")
     val username: String,
+    @get:JvmName("getPasswordForUser")
     val password: String,
     val email: String,
     val role: Role,

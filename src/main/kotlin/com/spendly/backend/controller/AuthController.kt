@@ -3,6 +3,7 @@ package com.spendly.backend.controller
 import com.spendly.backend.dto.LoginRequest
 import com.spendly.backend.dto.LoginResponse
 import com.spendly.backend.dto.RegisterRequest
+import com.spendly.backend.dto.RegisterResponse
 import com.spendly.backend.entity.User
 import com.spendly.backend.service.IUserService
 import com.spendly.backend.util.JwtUtil
@@ -22,7 +23,9 @@ class AuthController(
     fun register(@RequestBody request: RegisterRequest): ResponseEntity<Any> {
         return try {
             val user: User = userService.registerUser(request)
-            ResponseEntity.ok("User registered successfully")
+            val token = jwtUtil.generateToken(user)
+            val resp = RegisterResponse("User registered successfully",token)
+            ResponseEntity.ok(resp)
         } catch (e: IllegalArgumentException) {
             ResponseEntity.badRequest().body(e.message)
         }

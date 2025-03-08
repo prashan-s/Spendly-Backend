@@ -19,7 +19,7 @@ jwt:
   expiration: 86400000  # 24 hours in milliseconds
 
 exchange-rate:
-  api-key: your_exchange_rate_api_key
+  api-key: 41560c62cc1a7665b4e760561389c699
   url: https://api.exchangeratesapi.io/v1/latest
   symbols: USD,LKR,INR
   update-cron: "0 0 * * * *"  # daily at midnight

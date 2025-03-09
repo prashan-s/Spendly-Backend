@@ -29,10 +29,6 @@ class UserServiceImpl(
         return userRepository.findUserByEmail(email)
     }
 
-    override fun saveUser(user: User): User {
-        return userRepository.save(user)
-    }
-
     override fun registerUser(request: RegisterRequest): User {
         if (userRepository.findUserByEmail(request.email) != null) {
             throw IllegalArgumentException("Username already exists")

@@ -6,8 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService
 
 interface IUserService {
     fun userDetailsService(): UserDetailsService?
-    fun findUserByEmail(email: String): User?
-    fun saveUser(user: User): User
-
     fun registerUser(request: RegisterRequest): User
+    fun findUserByEmail(email: String): User?
 }

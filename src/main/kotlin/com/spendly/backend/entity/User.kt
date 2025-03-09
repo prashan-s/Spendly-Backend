@@ -17,7 +17,9 @@ data class User(
     val password: String,
     val email: String,
     val role: Role,
-    val isEmailVerified: Boolean
+    val isEmailVerified: Boolean = false,
+    val verificationToken: String? = null
+
 ): UserDetails {
 
     override fun getAuthorities(): Collection<GrantedAuthority> {

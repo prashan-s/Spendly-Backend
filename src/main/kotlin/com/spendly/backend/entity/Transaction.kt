@@ -17,5 +17,5 @@ data class Transaction(
     val tags: List<String> = emptyList(),
     val description: String? = null,
     val recurring: Boolean = false,
-    val recurrencePeriod: String? = null // e.g., "DAILY", "WEEKLY", "MONTHLY"
+    val recurrencePeriod: String? = null
 )

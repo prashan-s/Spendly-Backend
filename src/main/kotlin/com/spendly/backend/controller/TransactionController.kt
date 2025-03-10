@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.bind.annotation.*
+import java.time.LocalDateTime
+import java.util.*
 
 @RestController
 @RequestMapping("/transactions")
@@ -33,7 +35,7 @@ class TransactionController(
                 type = tx.type,
                 amount = tx.amount,
                 currency = tx.currency,
-                date = tx.date,
+                date = LocalDateTime.now(),
                 category = tx.category,
                 tags = tx.tags,
                 description = tx.description,

@@ -13,6 +13,7 @@ import org.junit.jupiter.api.assertThrows
 import org.springframework.boot.test.context.SpringBootTest
 import java.math.BigDecimal
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.*
 
 @SpringBootTest
@@ -33,7 +34,7 @@ class TransactionServiceTest {
             type = TransactionType.EXPENSE,
             amount = 100.0,
             currency = "USD",
-            date = Date(),
+            date = LocalDateTime.now(),
             category = "Groceries",
             tags = listOf("food", "essentials"),
             description = "Weekly grocery shopping",
@@ -73,7 +74,7 @@ class TransactionServiceTest {
                 type = TransactionType.EXPENSE,
                 amount = 50.0,
                 currency = "USD",
-                date = Date(),
+                date = LocalDateTime.now(),
                 category = "Dining",
                 tags = listOf("restaurant", "food"),
                 description = "Dinner at a restaurant",
@@ -85,7 +86,7 @@ class TransactionServiceTest {
                 type = TransactionType.INCOME,
                 amount = 500.0,
                 currency = "USD",
-                date = Date(),
+                date = LocalDateTime.now(),
                 category = "Salary",
                 tags = listOf("work", "monthly"),
                 description = "Monthly salary",

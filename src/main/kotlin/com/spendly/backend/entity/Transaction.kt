@@ -4,6 +4,7 @@ import com.spendly.backend.types.TransactionType
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
+import java.util.*
 
 @Document(collection = "transactions")
 data class Transaction(
@@ -12,7 +13,7 @@ data class Transaction(
     val type: TransactionType,
     val amount: Double,
     val currency: String,
-    val date: LocalDateTime,
+    val date: Date,
     val category: String,
     val tags: List<String> = emptyList(),
     val description: String? = null,

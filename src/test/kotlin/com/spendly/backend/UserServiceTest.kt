@@ -11,11 +11,13 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import java.util.*
 
+@SpringBootTest
 class UserServiceTest {
 
     private lateinit var userService: UserServiceImpl

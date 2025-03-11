@@ -5,5 +5,6 @@ data class BudgetResponse(
     val userId: String,
     val category: String,
     val limitAmount: Double,
-    val period: String
+    val period: String,
+    val currentSpent: Double
 )

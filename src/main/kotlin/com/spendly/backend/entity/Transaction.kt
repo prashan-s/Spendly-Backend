@@ -2,6 +2,7 @@ package com.spendly.backend.entity
 
 import com.spendly.backend.types.TransactionType
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
 
@@ -17,5 +18,6 @@ data class Transaction(
     val tags: List<String> = emptyList(),
     val description: String? = null,
     val recurring: Boolean = false,
-    val recurrencePeriod: String? = null
+    val recurrencePeriod: String? = null,
+    val goalId: String? = null
 )

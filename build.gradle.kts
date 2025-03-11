@@ -60,6 +60,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+
+    // iText for PDF generation
+    implementation("com.itextpdf:itext7-core:7.2.5")
+    implementation("com.itextpdf:html2pdf:4.0.5")
 }
 
 kotlin {

@@ -1,6 +1,7 @@
 package com.spendly.backend.entity
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 
 @Document(collection = "budgets")
@@ -9,5 +10,6 @@ data class Budget(
     val userId: String,
     val category: String,  // e.g., "Food", "Transport", or "ALL" for overall budget
     val limitAmount: Double,
-    val period: String = "MONTHLY"  // default period
+    val period: String = "MONTHLY",  // default period
+    var currentSpent: Double = 0.0
 )

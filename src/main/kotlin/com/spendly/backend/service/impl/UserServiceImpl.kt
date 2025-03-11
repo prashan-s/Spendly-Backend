@@ -5,6 +5,7 @@ import com.spendly.backend.entity.User
 import com.spendly.backend.repository.UserRepository
 import com.spendly.backend.service.IEmailService
 import com.spendly.backend.service.IUserService
+import com.spendly.backend.types.Role
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
@@ -40,7 +41,7 @@ class UserServiceImpl(
             username = request.username,
             email = request.email,
             password = hashedPassword,
-            role = request.role,
+            role = Role.USER,
             isEmailVerified = false,                // Not enabled until verified
             verificationToken = verificationToken
         )
